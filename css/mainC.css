@@ -15,24 +15,24 @@ h4{
   font-family: 'Roboto', serif;
   -webkit-margin-before:0.7rem;
   -webkit-margin-after:0.7rem;
-  -moz-margin-before:0.7rem;
-  -moz-margin-after:0.7rem;
+  margin-top: :0.7rem;
+  margin-bottom: :0.7rem;
 }
 h5{
   font-size: 1.2rem;
   font-family: 'Roboto', serif;
   -webkit-margin-before:0.5rem;
   -webkit-margin-after:0.5rem;
-  -moz-margin-before:0.5rem;
-  -moz-margin-after:0.5rem;
+  margin-top: :0.5rem;
+  margin-bottom: :0.5rem;
 }
 h6{
   font-size: 1.2rem;
   font-family: 'Roboto', serif;
   -webkit-margin-before:0;
   -webkit-margin-after:0.2rem;
-  -moz-margin-before:0;
-  -moz-margin-after:0.2rem;
+  margin-top: :0;
+  margin-bottom: :0.2rem;
 }
 p{
   font-family: 'Roboto', serif;
