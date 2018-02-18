@@ -127,11 +127,15 @@ p{
   /* width: 60%; */
   padding-left: 15px;
   padding-right: 1%;
-  flex: 0 1 350px;
+  flex: 0 1 450px;
 }
 .work-img{
   width: 35%;
   height: 250px;
+  background-size: 50%;
+  background-repeat: no-repeat;
+  background-attachment:fixed;
+  background-position: right;
 }
 .work-video{
   display: flex;
@@ -184,10 +188,15 @@ p{
     width: 98%;
     padding-left: 1%;
     padding-right: 1%;
+    flex: 0 1 540px;
   }
   .work-img{
     width: 98%;
     height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:local;
+    background-position: center;
   }
   .work-video > iframe{
     width: 100%;
