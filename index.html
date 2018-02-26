@@ -15,6 +15,11 @@
 
       gtag('config', 'UA-114611016-1');
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script type="text/javascript" src="js/jquery.scrollmagic.js"></script>
+    <!-- <script type="text/javascript" src="js/modernizr.custom.min.js"></script> -->
+    <script type="text/javascript" src="js/TimelineMax.min.js"></script>
+    <script type="text/javascript" src="js/TweenMax.min.js"></script>
   </head>
   <body>
     <!-- <div class="header">
@@ -34,9 +39,6 @@
             <h1>Lin, Yu-Hsuan</h1>
             <h4>Front-end Developer, UX Researcher</h4>
           </div>
-          <div id="scroll">
-
-          </div>
         </section>
         <section class="work work-style">
           <div class="work-topic">
@@ -48,14 +50,12 @@
             </div>
           </div>
           <div class="work-body">
-            <div class="work-abstract">
+            <div class="work-abstract full-width">
               <h6>Genre: Research</h6>
               <h6>Responsible for: Design, Develop </h6>
               <h6>Technique: Unity, Swift, Arduino</h6>
               <h6>Abstract:</h6>
               <p>As personal drones become more popular, we can envision a future where flying selfie bots are always with us. At present, users have to be very skillful to pilot the drone and are not easy to take aerial selfies by state-of-the-art methods. Based on user observation, we generalize the interaction flow of selfie taking into two stages: Positioning and Framing stage. In each stage, we present new interaction techniques including a direct pointing technique, two fine-tuning techniques, and a touch manipulation for framing. We conducted an experiment in VR and found that positioning a camera by using our Cylindrical and Spherical techniques are more efficient and easier to learn and use. We implemented a proof-of-concept Skyfie controller for evaluation. The result shows users felt intuitive and expressed enthusiasm to take aerial selfies with our techniques. Finally, we discuss the insights from the evaluation and conclude with future directions.</p>
-            </div>
-            <div class="work-img" style="background-image: url('https://lh3.googleusercontent.com/wybey2mKOpOk_G8xMAGfAlAanpQQn8LUVYfc2F8934zosgNfyWAE4j72qb7xrIwXPeuVLh8s4fCWwg=w1304-h702')">
             </div>
           </div>
           <div class="work-video">
@@ -84,11 +84,11 @@
 
             </div> -->
           </div>
-          <div class="work-video">
+          <div class="work-video" id="triggerB">
             <iframe src="https://www.youtube.com/embed/z7pxrHk5O4Q" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
           </div>
         </section>
-        <section class="work work-style">
+        <section class="work work-style" id="triggerA">
           <div class="work-topic">
             <div class="work-title">
               <h2>DCT Website(RWD practice)</h2>
@@ -106,14 +106,23 @@
               <p>RWD Design practice.</p>
               <a href="https://lexusjimmy.github.io/rwd/"><h5>Visit Website</h5>  </a>
             </div>
-            <!-- <div class="work-img" style="background-image: url('img/skyfie01.png')">
-            </div> -->
+            <div class="work-imgFrame" id="RWDScene">
+              <div class="work-img">
+                <img src="img/rwd01.png" alt="DCTWebsite">
+              </div>
+              <div class="work-img imgA">
+                <img src="img/rwd02.png" alt="DCTWebsite">
+              </div>
+              <div class="work-img imgB">
+                <img src="img/rwd03.png" alt="DCTWebsite">
+              </div>
+            </div>
           </div>
         </section>
         <section class="work work-style">
           <div class="work-topic">
             <div class="work-title">
-              <h2>Brain Department Store Official Site(Graduation Exhibition)</h2>
+              <h2>Brain Department Store Official Site</h2>
             </div>
             <div class="work-year">
               <h5>2014</h5>
@@ -125,18 +134,26 @@
               <h6>Responsible for: Programming, Concept </h6>
               <h6>Technique: html, CSS, JavaScipt</h6>
               <h6>Abstract:</h6>
-              <p>Parallax Webpage</p>
+              <p>Parallax Webpage (Graduation Exhibition)</p>
               <a href="https://lexusjimmy.github.io/prallaxScroll/page"><h5>Visit Website</h5></a>
             </div>
-            <div class="work-img" style="background-image: url('img/brainDe03.png')">
-
+            <div class="work-imgFrame" id="BDSScene">
+              <div class="work-img">
+                <img src="img/brainDe03.png" alt="BDSOfficialWebsite">
+              </div>
+              <div class="work-img imgA">
+                <img src="img/brainDe04.png" alt="BDSOfficialWebsite">
+              </div>
+              <div class="work-img imgB">
+                <img src="img/brainDe05.png" alt="BDSOfficialWebsite">
+              </div>
             </div>
           </div>
         </section>
         <section class="work work-style">
           <div class="work-topic">
             <div class="work-title">
-              <h2>BBR(Award Winning)</h2>
+              <h2>BBR</h2>
             </div>
             <div class="work-year">
               <h5>2014</h5>
@@ -148,11 +165,8 @@
               <h6>Responsible for: Programming(Arduino), Concept </h6>
               <h6>Technique: Arduino, html, JavaScript</h6>
               <h6>Abstract:</h6>
-              <p>Original training tool for badminton</p>
+              <p>Better Badminton Revolution Original training tool for badminton(Award Winning)</p>
             </div>
-            <!-- <div class="work-img">
-
-            </div> -->
           </div>
           <div class="work-video">
             <iframe src="https://www.youtube.com/embed/UK7EBH9r2M4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
@@ -165,5 +179,9 @@
         </div>
       </footer>
     </div>
+    <script type="text/javascript" src="js/master.js"></script>
+
+    </script>
+    </script>
   </body>
 </html>

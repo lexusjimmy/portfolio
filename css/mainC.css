@@ -101,6 +101,7 @@ p{
   border-left-color: black;
   border-top-style: solid;
   border-left-style: solid;
+  padding-bottom: 50px;
 }
 .work-topic{
   display: flex;
@@ -127,7 +128,6 @@ p{
 .work-body{
   display: flex;
   justify-content: space-between;
-  padding-bottom: 30px;
 }
 .work-abstract{
   /* width: 60%; */
@@ -135,19 +135,38 @@ p{
   padding-right: 1%;
   flex: 0 1 450px;
 }
-.work-img{
+.work-body > .full-width{
+  flex: 0 1 650px;
+}
+.work-imgFrame{
   width: 35%;
-  height: 250px;
-  background-size: 50%;
+  min-height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.work-img{
+  background-size: contain;
   background-repeat: no-repeat;
-  background-attachment:fixed;
-  background-position: right;
+  min-height: 100%;
+  width: 100%;
+  position: absolute;
+  left:0;
+  top:0;
+}
+.work-imgFrame > .imgA{
+  z-index: 10;
+}
+.work-imgFrame > .imgB{
+  z-index: 5;
+}
+.work-img > img{
+  width: 100%;
 }
 .work-video{
   display: flex;
   justify-content: center;
   padding-top: 15px;
-  padding-bottom: 50px;
+
 }
 .work-video > iframe{
   width: 100%;
@@ -196,7 +215,7 @@ p{
     padding-right: 1%;
     flex: 0 1 540px;
   }
-  .work-img{
+  .work-imgFrame{
     width: 98%;
     height: 200px;
     background-size: cover;
@@ -208,5 +227,10 @@ p{
     width: 100%;
     height:200px;
     border-color: black;
+  }
+}
+@media screen and (min-width: 900px) {
+  .main{
+    max-width: 900px;
   }
 }
