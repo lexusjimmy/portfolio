@@ -1,0 +1,63 @@
+
+
+@mixin responsive() {
+
+}
+body, h1, h2, h3, h4, h5, h6{
+  margin: 0;
+  padding: 0;
+}
+.container{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+}
+.header{
+  position: relative;
+  width: 100%;
+}
+.nav{
+  position: absolute;
+  right: 20%;
+  padding-top: 20px;
+  width: 100px;
+  &__option{
+    text-transform: capitalize;
+    margin-bottom: 10px;
+  }
+  &__option--selected{
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-bottom-color: gray;
+  }
+}
+.section{
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  &--left-black{
+    margin-right: 20%;
+    width: 80%;
+  }
+  &--right-black{
+    margin-left: 20%;
+    width: 80%;
+  }
+}
+.hero-unit{
+  font-size: 30px;
+  border-bottom-style: solid;
+  border-bottom-color: white;
+  
+  &__title{
+    color: white;
+    font-weight: 500;
+    font-size: 1.5em;
+  }
+  &__subtitle{
+    color: white;
+    font-weight: lighter;
+    font-size: 1em;
+  }
+}
