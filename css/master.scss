@@ -1,0 +1,293 @@
+
+$breakpoints:(
+  "sm": "(max-width: 800px)"
+);
+@mixin responsive($breakpoint) {
+  @media screen and #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
+}
+body{
+  overflow-x: hidden;
+}
+body, h1, h2, h3, h4, h5, h6{
+  margin: 0;
+  padding: 0;
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+.container{
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  @include responsive(sm){
+    padding-bottom: 60px;
+  }
+}
+.header{
+  position: fixed;
+  width: 100%;
+  @include responsive(sm){
+    bottom: 60px;
+  }
+}
+.nav{
+  position: absolute;
+  left: 80%;
+  padding-top: 20px;
+  width: 100px;
+  @include responsive(sm){
+    left: 0;
+    padding-top:0px;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__option{
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    color: gray;
+    cursor: pointer;
+    @include responsive(sm){
+      background-color: rgba(129,129,129,.8);
+      color: white;
+      border-right-style: solid;
+      border-right-width: thin;
+      width: 33%;
+      text-align: center;
+      padding-top: 20px;
+      height: 100%;
+      &:last-of-type{
+        border-right-style: none;
+      }
+    }
+  }
+  &__option--selected{
+    @extend .nav__option;
+    border-bottom-style: solid;
+    border-bottom-width: thin;
+    border-bottom-color: gray;
+    font-weight: bolder;
+    @include responsive(sm){
+      background-color: rgba(64,64,64,.8);
+      border-bottom-style: none;
+    }
+  }
+}
+.section{
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  font-size: 13px;
+  &--left-black{
+    margin-right: 20%;
+    width: 80%;
+    @include responsive(sm){
+      width: 100%;
+      margin-right: 0;
+    }
+    >.section__title{
+      padding-left: 20vw;
+      @include responsive(sm){
+        padding-left: 0;
+      }
+    }
+  }
+  &--right-black{
+    margin-left: 20%;
+    width: 80%;
+    @include responsive(sm){
+      width: 100%;
+      margin-left: 0;
+    }
+  }
+  &--work{
+    @extend .section--left-black;
+    height: auto;
+  }
+  &__title{
+    width: 100%;
+    height: 20vw;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    text-transform: capitalize;
+    font-size: 3em;
+  }
+  &__body{
+    margin-right: 20vw;
+    height:100%;
+  }
+  &__body--work{
+    height: 100%;
+  }
+}
+.hero-unit{
+  font-size: 30px;
+  border-bottom-style: solid;
+  border-bottom-color: white;
+  margin-left: 20vw;
+  padding-top: 30%;
+  &__title{
+    color: white;
+    font-weight: 500;
+    font-size: 1.5em;
+    text-transform: uppercase;
+  }
+  &__subtitle{
+    color: white;
+    font-weight: lighter;
+    font-size: 1em;
+    text-transform: capitalize;
+  }
+}
+.work{
+  padding-left: 20vw;
+  width: 60vw;
+  font-size: 15px;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  border-top-style: solid;
+  border-top-color: white;
+  border-top-width: 100px;
+  @include responsive(sm){
+    width: 100%;
+    padding-left: 0;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-top-width: 30px;
+  }
+  &:first-of-type{
+    border-top-style: none;
+    border-top-width: 0;
+  }
+  &__header{
+    display: inline-block;
+    width: 40%;
+    height: 100%;
+    @include responsive(sm){
+      width: 95%;
+    }
+  }
+  &__img{
+    height: 70%;
+    width: 100%;
+    overflow: hidden;
+    img{
+      width: 100%;
+    }
+  }
+  &__title{
+    font-size: 2em;
+    font-weight: bolder;
+    text-transform: capitalize;
+  }
+  &__year{
+    font-size: 1.7em;
+    font-weight: lighter;
+  }
+  &__body{
+    display: inline-block;
+    padding: 10px 10px 10px 10px;
+    height: 100%;
+    width: 58%;
+    @include responsive(sm){
+      width: 95%;
+    }
+  }
+  &__description{
+    list-style: none;
+    padding: 0;
+    line-height: 150%;
+    font-weight: bolder;
+    li{
+      padding: 0;
+    }
+  }
+  &__abstract{
+    padding-top: 10px;
+  }
+}
+.btn{
+  &__action{
+    cursor: pointer;
+    background-color: white;
+    border-radius: 10%;
+    font-weight: bolder;
+    text-transform: capitalize;
+    border-style: none;
+    padding: 5px 5px 5px 5px;
+    &::after{
+      content: " →";
+    }
+  }
+
+}
+.modal{
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,.8);
+    z-index: -2;
+  }
+  &--hide{
+    display: none;
+  }
+  &--center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__video{
+    width: 80vw;
+    height: 60vh;
+    iframe{
+      width: 100%;
+      height: 100%
+    }
+  }
+  &__close-btn{
+    cursor: pointer;
+    width: 50px;
+    height:50px;
+    position: fixed;
+    right: 30px;
+    top: 30px;
+    background-color: transparent;
+    border:0;
+    &::before{
+      content: '';
+      position: absolute;
+      background-color: gray;
+      width: 100%;
+      height: 20%;
+      transform: translate3d(0, -50%, 0) rotate(45deg);
+      top: 50%;
+      left: 0;
+    }
+    &::after{
+      content: '';
+      position: absolute;
+      background-color: gray;
+      width: 100%;
+      height: 20%;
+      transform: translate3d(0, -50%, 0) rotate(135deg);
+      top: 50%;
+      left: 0;
+    }
+  }
+}
