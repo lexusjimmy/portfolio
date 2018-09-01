@@ -1,0 +1,28 @@
+{
+  "en":{
+    "name": "lin, yu-hsuan",
+    "job": "UX Researcher, Front-End Developer",
+    "about": "An UX researcher double major in International Business and Digital Content & Technology.  <br>Usually try to find out the best solutions to problems. <br>Like to make new things! <br>Welcome to my portfolio!",
+      "works": {
+        "skyfie":{
+          "genre": "Genre: Research",
+          "responsible": "Responsible for: Design, Develop",
+          "technique": "Technique: Unity, Swift, Arduino",
+          "abstract":"As personal drones become more popular, we can envision a future where flying selfie bots are always with us. At present, users have to be very skillful to pilot the drone and are not easy to take aerial selfies by state-of-the-art methods. Based on user observation, we generalize the interaction flow of selfie taking into two stages: Positioning and Framing stage. In each stage, we present new interaction techniques including a direct pointing technique, two fine-tuning techniques, and a touch manipulation for framing. We conducted an experiment in VR and found that positioning a camera by using our Cylindrical and Spherical techniques are more efficient and easier to learn and use. We implemented a proof-of-concept Skyfie controller for evaluation. The result shows users felt intuitive and expressed enthusiasm to take aerial selfies with our techniques. Finally, we discuss the insights from the evaluation and conclude with future directions."
+        }
+      }
+  },
+  "jp":{
+    "name": "林 宇軒",
+    "job": "HTMLコーダー, フロントエンド/マークアップエンジニア",
+    "about": "問題にあったら、私いつも現在より相応しい解決方法を探します <br>また、物作りについて興味深く感じます。 <br>こちらは私のポートフォリオサイトです <br>ようこそ",
+      "works": {
+        "skyfie":{
+          "genre": "種類: 研究",
+          "responsible": "担当: 発想、開発",
+          "technique": "技術: Unity, Swift, Arduino",
+          "abstract":"As personal drones become more popular, we can envision a future where flying selfie bots are always with us. At present, users have to be very skillful to pilot the drone and are not easy to take aerial selfies by state-of-the-art methods. Based on user observation, we generalize the interaction flow of selfie taking into two stages: Positioning and Framing stage. In each stage, we present new interaction techniques including a direct pointing technique, two fine-tuning techniques, and a touch manipulation for framing. We conducted an experiment in VR and found that positioning a camera by using our Cylindrical and Spherical techniques are more efficient and easier to learn and use. We implemented a proof-of-concept Skyfie controller for evaluation. The result shows users felt intuitive and expressed enthusiasm to take aerial selfies with our techniques. Finally, we discuss the insights from the evaluation and conclude with future directions."
+        }
+      }
+  }
+}

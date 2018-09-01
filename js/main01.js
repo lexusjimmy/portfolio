@@ -5,15 +5,24 @@
       this.triggerDom = settings.modalDom;
       this.btnGenre = this.btnDom.getAttribute('action-toggle');
       this.linkURL = "";
+      for (var i = 0; i< this.btnDom.childNodes.length ; i++) {
+        var element = this.btnDom.childNodes[i];
+        if (element.tagName === "A") {
+          this.linkURL = element.href;
+        }
+      }
       switch (this.btnGenre) {
         case 'modal':
           this.btnDom.addEventListener('click',this._openModal.bind(this));
-          for (var i = 0; i< this.btnDom.childNodes.length ; i++) {
-            var element = this.btnDom.childNodes[i];
-            if (element.tagName === "A") {
-              this.linkURL = element.href;
-            }
-          }
+          // for (var i = 0; i< this.btnDom.childNodes.length ; i++) {
+          //   var element = this.btnDom.childNodes[i];
+          //   if (element.tagName === "A") {
+          //     this.linkURL = element.href;
+          //   }
+          // }
+          break;
+        case 'link':
+          this.btnDom.addEventListener('click',this._openWindow.bind(this));
           break;
         default:
 
@@ -30,6 +39,12 @@
       }
       this.triggerDom.classList.remove('modal--hide');
       this.triggerDom.classList.add('modal--center');
+    }
+    _openWindow(e){
+      e.preventDefault();
+      if (this.btnGenre === 'link') {
+        window.open(this.linkURL, '_blank');
+      }
     }
   }
   class Modal {
@@ -111,8 +126,21 @@
     }
 
   }
+  class LanguagePack {
+    constructor(settings) {
+      this.currentLang = settings.language;
+      this._languageData= {};
+    }
+    set languageData(val){
+
+      if (val.hasOwnProperty('en')&& val.hasOwnProperty('jp')) {
+        this._languageData = val;
+      }
+    }
+  }
   let isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
   let allPage = document.querySelector(isSafari? 'body':'html');
+  let langManager = new LanguagePack({'language':'en'});
 
   document.querySelectorAll('.btn__action').forEach(function (element) {
     new ActionBtn({targetDom: element, modalDom: document.getElementById('video-modal')});
@@ -122,5 +150,18 @@
     new Modal({targetModal: element});
   });
   new ListNavi('section', document.querySelector('.container'), document.getElementById("navi"), allPage);
+
+  fetch('language.json',{method: 'get'})
+  .then(function (response) {
+    if (response.ok) {
+      return response.json();
+    }else{
+      throw new Error(response.statusText);
+    }
+  }).then(function (j) {
+    langManager.languageData = j;
+  }).catch(function (err) {
+    console.log(err);
+  })
 
 }())
